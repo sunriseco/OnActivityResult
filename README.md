@@ -27,6 +27,17 @@ dependencies {
     implementation 'org.legobyte:onactivityresult:1.0.4'
 }
 ````
+Please note if your get error when publishing to Google ``ERROR getting 'android:label' attribute: attribute is not a string value``
+add lines below to module's ``AndroidManifest.xml`` file until i publish a new version:
+````xml
+<activity
+            tools:node="replace"
+            
+            android:theme="@style/ProxyTheme"
+            android:name="org.legobyte.onactivityresult.ProxyActivity"
+            android:screenOrientation="unspecified"
+            android:configChanges="screenSize|screenLayout|fontScale|keyboardHidden|keyboard|orientation|colorMode|density|layoutDirection|locale|mcc|mnc|navigation|smallestScreenSize|touchscreen|uiMode" />
+````
 
 ## License
 
